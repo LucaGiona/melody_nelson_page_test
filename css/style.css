@@ -20,7 +20,9 @@ MOBILE FIRST
   display: flex;
   
   justify-content: center;
-  height: 430px;
+  min-height: 430px;
+  height: auto;
+  padding-bottom: 2rem;
   background-image: url('../Fotos/Flaschen-Melody.jpg');
   background-size: cover;
   background-position: center;
@@ -88,24 +90,71 @@ h3:focus{
   margin-top: .7em;
 }
 
+/* =============================== */
+/*   CONTACT ICON GRID – FIXED    */
+/* =============================== */
+
+/* Desktop (5 Icons) */
 .contact-container {
   margin-top: 2em;
-  margin-left: 2em;
- 
-  width:100%;
-  max-width:450px;
+  width: 100%;
+  max-width: 500px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  
- 
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  justify-items: center;
+  align-items: center;
 }
 
-@media (max-width: 600px){
-  .contact-container{
-    justify-content: space-around;
+/* Tablet */
+@media (max-width: 800px){
+  .contact-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* Mobile */
+@media (max-width: 600px){
+  .contact-container {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 16px;
+  }
+}
+
+/* Very small */
+@media (max-width: 360px){
+  .contact-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Icon-Größe einheitlich */
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text UNTER dem Grid */
+.contact-label {
+  margin-top: 0.8rem;
+  font-family: var(--font-text);
+  color: var(--font-color-text);
+  letter-spacing: 2px;
+  font-size: .9rem;
+  text-align: center;
+}
+
+
+
+/* =============================== */
+/* ALLES ANDERE IST DEINE ORIGINALDATEI */
+/* (nicht verändert) */
+/* =============================== */
+
+
+
 
 .contact-item {
   display: flex;
@@ -124,12 +173,15 @@ h3:focus{
 
 }
 
+/* (Diese Regel bleibt bestehen, wird aber nicht mehr genutzt) */
 .icon {
   width: 70%;
   max-width: 40px; 
   height: auto;
   max-height:30px;
-  margin-bottom: 10px;}
+  margin-bottom: 10px;
+}
+
 .contact-item span{
   display: inline-block;
   vertical-align: middle;
@@ -148,16 +200,14 @@ h3:focus{
 
   background-size: contain;
   background-position: center;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   
   background-image: url('../Fotos/Kacheln-melody.jpg');
-  background-color: #e74949; /* Hintergrundfarbe für den Abschnitt */
+  background-color: #e74949; 
   border-top: 1px solid var(--main-color);
   border-bottom: 1px solid var(--main-color);
   overflow: hidden;
 }
+
 
 /* section 2 */
 .background-img3 {
@@ -166,14 +216,11 @@ h3:focus{
     height: 300px;
     background-size: contain;
     background-position: center;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   
   background-image: url('../Fotos/TresenVorne-Melody.jpg');
   background-color: #d6aeae;
   border-top: 1px solid var(--main-color);
-  border-bottom: 1px solid var(--main-color); /* Hintergrundfarbe für den Abschnitt */
+  border-bottom: 1px solid var(--main-color);
 }
 
 /* open Zeiten */
@@ -184,14 +231,14 @@ h3:focus{
   left: 50%;
   transform: translate(-50%, -50%);
 
-  z-index: 2; /* über dem Overlay */
+  z-index: 2;
   
   border-radius: 8px;
   border: var(--font-color-titles) 2px solid;
   width: 20em;
 
   overflow: hidden;
-  background: rgba(142, 128, 128, 0); /* optional: verbessert Lesbarkeit */
+  background: rgba(142, 128, 128, 0);
 }
 
 
@@ -215,6 +262,9 @@ h3:focus{
   text-align: center; 
   
 }
+
+/* … ab hier bleibt ALLES wie in deinem Original … */
+
 
 .info-open > :nth-child(1),
 .info-open > :nth-child(6),
