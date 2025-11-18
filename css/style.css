@@ -138,8 +138,14 @@ h3:focus{
 
 /* section 1 */
 .background-img2 {
+  position: relative;
   width: 100%;
-  height: 180px;
+  
+  height: 25vw;
+  max-height: 300px;
+  min-height: 150px;
+
+
   background-size: contain;
   background-position: center;
   /* display: flex;
@@ -150,33 +156,44 @@ h3:focus{
   background-color: #e74949; /* Hintergrundfarbe für den Abschnitt */
   border-top: 1px solid var(--main-color);
   border-bottom: 1px solid var(--main-color);
+  overflow: hidden;
 }
 
 /* section 2 */
 .background-img3 {
-  width: 100%;
-   height: 300px;
-  background-size: contain;
-  background-position: center;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-size: contain;
+    background-position: center;
   /* display: flex;
   justify-content: center;
   align-items: center; */
   
   background-image: url('../Fotos/TresenVorne-Melody.jpg');
-  background-color: #732f2f; /* Hintergrundfarbe für den Abschnitt */
+  background-color: #d6aeae;
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color); /* Hintergrundfarbe für den Abschnitt */
 }
 
 /* open Zeiten */
 
-.open-conatiner{
-  position: relative;
-  margin: 0 auto ;
+.open-conatiner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 2; /* über dem Overlay */
+  
   border-radius: 8px;
-  border:  var(--font-color-titles) 2px solid;
-  border-top: solid 1px var(--font-color-titles);
-  width:20em;
+  border: var(--font-color-titles) 2px solid;
+  width: 20em;
+
   overflow: hidden;
+  background: rgba(142, 128, 128, 0); /* optional: verbessert Lesbarkeit */
 }
+
 
 .bg-overlay{
   position: absolute;
@@ -185,7 +202,7 @@ h3:focus{
   right: 0;
   bottom: 0;
   background-color: black;
-  opacity: .5;
+  opacity: .3;
 }
 
 .info-open {
@@ -239,20 +256,12 @@ h3:focus{
   font-size: 1.1rem;
 }
 
-.footer{
-  background-color: black;
-  height: 5em;
-  width:100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: .5rem;
 
-}
 
 .impr{
-  color: rgb(129, 123, 123);
+  color: rgb(228, 226, 226);
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 2;
   
  
 }
@@ -280,3 +289,86 @@ h3:focus{
  object-fit: contain;
 }
 
+.info-text {
+  position: relative;
+  padding: 2rem .5rem;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #111;
+  line-height: 1.6;
+  overflow: hidden; /* wichtig, falls zwischen zwei divs */
+}
+
+/* Hintergrund: diagonal, 1/3 schwarz, 2/3 gelb */
+.info-text::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    65deg,        /* wichtig: Kante läuft vertikal! */
+
+    black 25%,     /* oben links: beginnt schwarz */
+    black 15%,    /* oben schmaler schwarzer Streifen */
+
+   
+    var(--main-color) 100%,
+    var(--main-color) 10%  /* rechts: voll Gelb */
+  );
+
+  z-index: -1;
+}
+
+/* Überschrift */
+.info-text h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--main-color);
+  letter-spacing: 3px;
+}
+
+/* Fließtext */
+.info-text p {
+  font-size: 1rem;
+  color: #f1f1f1; 
+  max-width: 650px;
+}
+
+/* Mobile Anpassung */
+@media (max-width: 600px) {
+  .info-text {
+    padding: 1.5rem 1rem;
+  }
+
+  .info-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .info-text p {
+    font-size: .95rem;
+  }
+}
+
+.info-inner {
+  max-width: 500px;
+  margin: 0 auto;   /* zentriert */
+  padding: 3rem 3rem; 
+  text-align: center;   /* schöner Abstand */
+}
+
+.footer{
+  background-color: black;
+  height: 5em;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .5rem;
+
+}
+
+.footer-text{
+  font-family: var(--font-text);
+  color: var(--font-color-text);
+  letter-spacing: 2px;
+  
+}

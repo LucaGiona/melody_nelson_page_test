@@ -1,16 +1,16 @@
 /* zentrieren der Felder */
 .button-container {
- position: absolute;
- top:28em;
- left: 50%;
- transform: translate(-50%);
+  position: absolute;
+  top: 16%;                 /* statt bottom */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1px; 
+  gap: 12px;
   z-index: 20;
 }
+
 
 
 .btn {
@@ -26,7 +26,7 @@
    cursor: pointer;
    text-align: center;
    text-decoration: none;
-   opacity: .75;
+   opacity: .95;
    width:200px;
    max-width: 100%;
    box-sizing: border-box;
@@ -98,3 +98,58 @@
  justify-content: center;
  margin-bottom: 1em;
 }
+
+/* Info Button */
+.hidden { display: none; }
+
+.info-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  letter-spacing: .5px;
+  background-color: #ffd700;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #333;
+  
+}
+
+.info-btn:hover {
+  background-color: #e6c000;
+  border-color: #333;
+}
+
+/* Slide-Down / Slide-Up */
+
+.info-full {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.4s ease;
+}
+
+/* Wenn geöffnet */
+.info-full.open {
+  opacity: 1;
+}
+
+/* Sticky-Floating Button */
+.info-btn.sticky-close {
+  position: fixed;          /* bleibt unten am Screen kleben */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+/* Wenn Ende erreicht → NICHT mehr sticky */
+.info-btn.freeze {
+  position: static !important; /* wieder im normalen Flow */
+  transform: none;
+  margin-top: 20px;
+}
+
