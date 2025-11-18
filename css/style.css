@@ -372,3 +372,20 @@ h3:focus{
   letter-spacing: 2px;
   
 }
+.text-rights ol,
+.text-rights ul {
+  text-align: left;       
+}
+
+.text-rights li {
+  text-align: left;       
+}
+
+.text-rights p,
+.text-rights h3,
+.text-rights h4 {
+  text-align: left;        
+}
+
+
+
