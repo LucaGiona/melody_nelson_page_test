@@ -19,9 +19,9 @@
    font-size: 16px;
    font-family: 'Josefin Sans', sans-serif;
    letter-spacing: .8px;
-   color: rgb(70, 57, 57);
-   background-color: #ffd700;
-   border: black solid .5px;
+   color: rgb(250, 249, 249);
+   background-color: #040404;
+   border: rgb(196, 174, 30) solid 3.5px;
    border-radius: 8px;
    cursor: pointer;
    text-align: center;

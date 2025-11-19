@@ -29,7 +29,7 @@ MOBILE FIRST
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.65); /* Halbtransparenter Hintergrund */
+  background-color: rgba(0, 0, 0, 0.35); /* Halbtransparenter Hintergrund */
   width: 90vw;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ MOBILE FIRST
 h1 {
   font-size: 2rem;
   font-family: var(--font-titles);
-  color: var( --font-color-titles);
+  color: rgb(219, 219, 219);
   text-transform: uppercase;
   letter-spacing: .35em;
 }
@@ -69,7 +69,7 @@ h1 {
 h3, h2 {
  
   font-family: var(--font-text);
-  color: var(--font-color-text);
+  color: rgb(246, 245, 239);
   letter-spacing: 4px;
 }
 h2{
@@ -202,7 +202,7 @@ h3:focus{
   background-position: center;
   
   background-image: url('../Fotos/Kacheln-melody.jpg');
-  background-color: #e74949; 
+  background-color: #f1e7e7; 
   border-top: 1px solid var(--main-color);
   border-bottom: 1px solid var(--main-color);
   overflow: hidden;
