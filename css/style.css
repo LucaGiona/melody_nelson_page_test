@@ -458,3 +458,11 @@ h3:focus{
 img {
   max-width: 90%;
 }
+
+.maps-pin {
+  width: 25px;
+  height: auto;
+  object-fit: contain;
+ 
+  
+}
