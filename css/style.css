@@ -76,6 +76,10 @@ h2{
  margin-top: .5em;
 }
 
+h4 {
+  color: var(--main-color)
+}
+
 /* google maps link */
 a{
   text-decoration: none;
