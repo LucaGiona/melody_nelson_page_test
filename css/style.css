@@ -439,3 +439,18 @@ h3:focus{
 
 
 
+.wrapper{
+  
+  margin: 0 auto;
+  background-color: #ffd700;
+}
+
+.gallery {
+  
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 90%;
+}
