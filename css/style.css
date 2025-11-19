@@ -235,8 +235,8 @@ h3:focus{
 .background-img3 {
     position: relative;
     width: 100%;
-    height: 300px;
-    background-size: contain;
+    height: 450px;
+    background-size: cover;
     background-position: center;
   
   background-image: url('../Fotos/TresenVorne-Melody.jpg');
@@ -244,6 +244,14 @@ h3:focus{
   border-top: 1px solid var(--main-color);
   border-bottom: 1px solid var(--main-color);
 }
+
+@media (max-width: 600px) {
+  .background-img3 {
+    height: 250px;          /* deine ursprüngliche Mobile-Höhe */
+    background-size: cover;
+  }
+}
+
 
 /* open Zeiten */
 
@@ -377,7 +385,8 @@ h3:focus{
 }
 
 .pfeil{
-  color: var(--main-color)
+  color: var(--main-color);
+  font-size: 2rem;
 }
 
 /* Hintergrund: diagonal, 1/3 schwarz, 2/3 gelb */
@@ -469,13 +478,30 @@ h3:focus{
   text-align: left;        
 }
 
-
-
-.wrapper{
-  
+.wrapper {
   margin: 0 auto;
-  background-color: #ffd700;
+  padding: 2rem 0;
+
+  background: linear-gradient(
+    49deg,
+
+    /* jetzt oben: Gelb-Bereich */
+    var(--main-color) 0%,
+    var(--main-color) 5%,
+
+    /* Übergang */
+    #333 30%,
+    #222 70%,
+
+    /* unten: dunkler Abschluss */
+    black 95%,
+    black 100%
+  );
 }
+
+
+
+
 
 .gallery {
   

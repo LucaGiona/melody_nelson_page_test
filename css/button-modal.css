@@ -1,7 +1,7 @@
 /* zentrieren der Felder */
 .button-container {
   position: absolute;
-  top: 16%;                 /* statt bottom */
+  top: 20%;                 /* statt bottom */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
