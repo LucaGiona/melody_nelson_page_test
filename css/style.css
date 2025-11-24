@@ -29,7 +29,7 @@ MOBILE FIRST
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.2); /* Halbtransparenter Hintergrund */
+  background-color: rgba(0, 0, 0, 0.4); /* Halbtransparenter Hintergrund */
   width: 90vw;
   display: flex;
   flex-direction: column;
@@ -48,14 +48,32 @@ MOBILE FIRST
 #logo25 {
   text-align: center;
 }
+/* LOGO – zentrale, stabile Steuerung */
 
-.logo-melody {
-  height: calc(var(--logo-max-height) * 0.6);
-  padding: var(--logo-padding);
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 10px auto;  /* Abstand nach unten */
+  padding: 0;
 }
-.logo-melody-sml {
-  height: calc(var(--logo-max-height) * 0.5);
-  padding: var(--logo-padding);
+
+.logo-img {
+  width: clamp(60px, 20vw, 90px);  /* GENAU halbiert */
+  height: auto;
+  display: block;
+}
+
+
+/* kleinere Version für Modal */
+.logo-img.small {
+  width: clamp(45px, 12vw, 65px);  /* auch halbiert */
+}
+
+
+.maintitle{
+  margin-top: 1.5em;
 }
 
 h1 {
@@ -64,7 +82,7 @@ h1 {
 
   color: var(--main-color);
   text-transform: uppercase;
-  letter-spacing: .35em;
+  letter-spacing: .15em;
 }
 
 h3, h2, h4 {
@@ -372,16 +390,35 @@ h3:focus{
  object-fit: contain;
 }
 
-.info-events{
-  color: rgb(255, 255, 255);
-  letter-spacing: 2px;
+.info-events {
+  color: #fff;
   font-family: var(--font-text);
-  margin-top: 1em;
+
+  /* Responsive Schriftgröße */
+  font-size: clamp(0.8rem, 2.4vw, 1.2rem);
+
+  /* Letter-spacing responsiv */
+  letter-spacing: clamp(1px, 0.6vw, 2px);
+
+  /* Abstand oben – auch leicht responsiv */
+  margin-top: clamp(0.5em, 2vw, 1em);
+
+  text-align: center;   /* für mobile sauber */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;            /* Abstand zwischen Pfeil und Text */
 }
-.pfeil{
+
+.pfeil {
   color: var(--main-color);
-  font-size: 2rem;
+
+  /* vorher: font-size: 2rem → viel zu groß */
+  font-size: clamp(1rem, 3vw, 1.6rem);
+
+  line-height: 1;
 }
+
 
 .info-text {
   position: relative;
