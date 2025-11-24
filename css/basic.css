@@ -34,9 +34,10 @@ html{
     font-family: 'Poiret One', sans-serif;
 ============= */
 
-:root{
 
- --font-text: 'Josefin Sans', sans-serif;
+
+:root{
+--font-text: 'Josefin Sans', sans-serif;
  --font-size-large: 2rem;
  --font-size-normal: 1rem;
  --font-size-small: .5rem;
@@ -62,7 +63,4 @@ html{
 .styled-scrollbars::-webkit-scrollbar-track {
   background: #333;
 }
-
-
-
 

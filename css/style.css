@@ -60,15 +60,16 @@ MOBILE FIRST
 
 h1 {
   font-size: 2rem;
-  font-family: var(--font-color-text);
-  color: rgb(219, 219, 219);
+  font-family: 'Josefin Sans', sans-serif;
+
+  color: var(--main-color);
   text-transform: uppercase;
   letter-spacing: .35em;
 }
 
-h3, h2 {
+h3, h2, h4 {
  
-  font-family: var(--font-text);
+  font-family: 'Josefin Sans', sans-serif;
   color: rgb(246, 245, 239);
   letter-spacing: 4px;
 }
@@ -155,7 +156,7 @@ h3:focus{
 /* Text UNTER dem Grid */
 .contact-label {
   margin-top: 0.8rem;
-  font-family: var(--font-text);
+  font-family: 'Josefin Sans', sans-serif;
   color: var(--font-color-text);
   letter-spacing: 2px;
   font-size: .9rem;
@@ -374,7 +375,7 @@ h3:focus{
 .info-events{
   color: rgb(255, 255, 255);
   letter-spacing: 2px;
-  font-family: var(--font-titles);
+  font-family: var(--font-text);
   margin-top: 1em;
 }
 .pfeil{
@@ -573,4 +574,8 @@ img {
   object-fit: contain;
  
   
+}
+
+.contact{
+  color:var(--main-color);
 }
