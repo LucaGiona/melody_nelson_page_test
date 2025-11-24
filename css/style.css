@@ -29,7 +29,7 @@ MOBILE FIRST
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.35); /* Halbtransparenter Hintergrund */
+  background-color: rgba(0, 0, 0, 0.2); /* Halbtransparenter Hintergrund */
   width: 90vw;
   display: flex;
   flex-direction: column;
@@ -208,15 +208,15 @@ h3:focus{
 .background-img2 {
   position: relative;
   width: 100%;
-  height: 25vw;
+  height: 30vw;
   max-height: 300px;
   min-height: 150px;
-  background-position: contain;
-  background-size: auto;
+  background-position: center;
+  background-size: cover;
   
-  background-image: url('../Fotos/Kacheln-melody.jpg');
+  background-image: url('../Fotos/TresenVorne-Melody.jpg');
   background-color: transparent;
-  border-top: 1px solid black;
+  border-top: 1px solid grey;
   border-bottom: 1px solid black;
   overflow: hidden;
 }
@@ -236,10 +236,11 @@ h3:focus{
     position: relative;
     width: 100%;
     height: 450px;
-    background-size: cover;
-    background-position: center;
+    background-size: 120%;
+    background-position: 100% center;
+    
   
-  background-image: url('../Fotos/TresenVorne-Melody.jpg');
+  background-image: url('../Fotos/drink1.webp');
   background-color: #d6aeae;
   border-top: 1px solid var(--main-color);
   border-bottom: 1px solid var(--main-color);
@@ -248,7 +249,8 @@ h3:focus{
 @media (max-width: 600px) {
   .background-img3 {
     height: 250px;          /* deine ursprüngliche Mobile-Höhe */
-    background-size: cover;
+    background-size: 120%;
+    background-position: 100% center;
   }
 }
 
@@ -510,7 +512,12 @@ h3:focus{
 }
 
 img {
-  max-width: 90%;
+ 
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px; 
 }
 
 .maps-pin {
