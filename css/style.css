@@ -11,8 +11,8 @@ MOBILE FIRST
   --logo-max-height: 200px;
   --logo-padding: 1.2em;
   --main-color: #ffd700;
-  --font-titles: 'Josefin Sans', sans-serif;
-  --font-text: 'Poiret One', cursive;
+ 
+ 
 }
 
 .header {
@@ -60,7 +60,7 @@ MOBILE FIRST
 
 h1 {
   font-size: 2rem;
-  font-family: var(--font-titles);
+  font-family: var(--font-color-text);
   color: rgb(219, 219, 219);
   text-transform: uppercase;
   letter-spacing: .35em;
@@ -217,7 +217,7 @@ h3:focus{
   background-image: url('../Fotos/TresenVorne-Melody.jpg');
   background-color: transparent;
   border-top: 1px solid grey;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--main-color);
   overflow: hidden;
 }
 
@@ -326,7 +326,7 @@ h3:focus{
 }
 
 .open2{
-  font-family: var(--font-titles);
+  font-family: var(--font-text);
   font-size: .8rem;
   color: var(--font-color-text);
   padding: .5rem;
@@ -372,40 +372,34 @@ h3:focus{
 }
 
 .info-events{
-  color: white;
+  color: rgb(255, 255, 255);
   letter-spacing: 2px;
   font-family: var(--font-titles);
   margin-top: 1em;
 }
+.pfeil{
+  color: var(--main-color);
+  font-size: 2rem;
+}
+
 .info-text {
   position: relative;
   padding: 2rem .5rem;
   font-family: 'Josefin Sans', sans-serif;
   color: #111;
   line-height: 1.6;
-  overflow: hidden; /* wichtig, falls zwischen zwei divs */
+  overflow: visible; /* wichtig, falls zwischen zwei divs */
 }
 
-.pfeil{
-  color: var(--main-color);
-  font-size: 2rem;
-}
+
 
 /* Hintergrund: diagonal, 1/3 schwarz, 2/3 gelb */
 .info-text::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    65deg,        /* wichtig: Kante läuft vertikal! */
-
-    black 25%,     /* oben links: beginnt schwarz */
-    black 15%,    /* oben schmaler schwarzer Streifen */
-
-   
-    var(--main-color) 100%,
-    var(--main-color) 10%  /* rechts: voll Gelb */
-  );
+  background-color: black;
+  border-color: #ffd700;
 
   z-index: -1;
 }
@@ -447,6 +441,59 @@ h3:focus{
   padding: 3rem 3rem; 
   text-align: center;   /* schöner Abstand */
 }
+
+/* Versteckter Volltext mit Animation */
+.info-full {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+
+/* Der Button sitzt normal */
+/* === Info-Button (vollständig unabhängig von .btn) === */
+.info-toggle-btn {
+  display: block;
+  margin: 2rem auto 0 auto;  /* zentriert */
+  padding: 10px 20px;
+
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 1.8px;
+
+  color: rgb(250, 249, 249);
+  background-color: #040404;
+  border: 1px solid var(--main-color);
+  border-radius: 18px;
+
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.95;
+
+  width: 200px;      /* wie .btn */
+  max-width: 100%;
+  box-sizing: border-box;
+
+  position: static;
+  z-index: 20;
+}
+
+.info-toggle-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Sticky / freeze */
+.info-toggle-btn.sticky-close {
+  position: sticky;
+  bottom: 20px;
+}
+
+.info-toggle-btn.freeze {
+  position: static;
+  margin-top: 20px;
+}
+
 
 .footer{
   background-color: black;

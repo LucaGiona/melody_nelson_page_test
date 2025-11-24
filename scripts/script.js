@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const button = document.querySelector(".info-btn");
+  const button = document.querySelector(".info-toggle-btn");
   const fullText = document.querySelector(".info-full");
   const infoBox = document.querySelector(".info-text");
   const endAnchor = document.getElementById("info-end");
 
-  // --- Observer fürs Einfrieren am Ende ---
+  // --- IntersectionObserver (super stabil & simpel) ---
   const observer = new IntersectionObserver(
     entries => {
       const entry = entries[0];
 
+      // Wenn der Endpunkt sichtbar ist → Button unten fixieren
       if (entry.isIntersecting && fullText.classList.contains("open")) {
-        // Ende erreicht → Button unten "fest" einrasten
         button.classList.add("freeze");
         button.classList.remove("sticky-close");
       } else {
@@ -20,38 +20,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     },
-    {
-      root: null,
-      threshold: 1.0,
-    }
+    { root: null, threshold: 1.0 }
   );
 
   observer.observe(endAnchor);
 
-  // --- Button clicked ---
+  // --- Button toggle ---
   button.addEventListener("click", () => {
     const opening = !fullText.classList.contains("open");
 
     if (opening) {
-      // Text aufklappen
+      // Öffnen
       fullText.classList.add("open");
       fullText.style.maxHeight = fullText.scrollHeight + "px";
       button.textContent = "…schließen";
 
-      // Scroll nach oben
-      const top = infoBox.getBoundingClientRect().top + window.scrollY;
+      // Nach oben scrollen → danach sticky aktivieren
+      const top = infoBox.offsetTop - 20;
       window.scrollTo({ top, behavior: "smooth" });
 
-      // Sticky erst aktivieren, wenn oben angekommen
-      const checkScroll = () => {
-        if (Math.abs(infoBox.getBoundingClientRect().top) < 5) {
-          button.classList.add("sticky-close");
-        } else {
-          requestAnimationFrame(checkScroll);
-        }
-      };
-
-      requestAnimationFrame(checkScroll);
+      // Sticky erst aktiv, wenn oben angekommen
+      setTimeout(() => {
+        button.classList.add("sticky-close");
+      }, 500);
     } else {
       // Schließen
       fullText.classList.remove("open");
