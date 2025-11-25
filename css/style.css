@@ -23,13 +23,13 @@ MOBILE FIRST
   min-height: 430px;
   height: auto;
   padding-bottom: 2rem;
-  background-image: url('../Fotos/Flaschen-Melody.jpg');
-  background-size: cover;
+  background-image: url('../Fotos/jane.webp');
+  background-size: contain;
   background-position: center;
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4); /* Halbtransparenter Hintergrund */
+  background-color: rgba(0, 0, 0, 0.0); /* Halbtransparenter Hintergrund */
   width: 90vw;
   display: flex;
   flex-direction: column;
@@ -233,7 +233,7 @@ h3:focus{
   background-position: center;
   background-size: cover;
   
-  background-image: url('../Fotos/TresenVorne-Melody.jpg');
+  background-image: url('../Fotos/Flaschen-Melody.jpg');
   background-color: transparent;
   border-top: 1px solid grey;
   border-bottom: 1px solid var(--main-color);
@@ -303,7 +303,7 @@ h3:focus{
     border: 2px solid var(--main-color);
     border-radius: 10px;
 
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
     width: max-content;
 
