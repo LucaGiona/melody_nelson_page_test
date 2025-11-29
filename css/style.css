@@ -313,7 +313,7 @@ h3:focus{
 /* linke Spalte */
 .day {
     text-align: right;
-    color: white;
+    color: var(--main-color);
     letter-spacing: 3px;
     font-size: 1.3rem;
 }

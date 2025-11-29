@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (fullText.classList.contains("open")) {
           button.classList.add("sticky-close");
           button.classList.remove("freeze");
+          
         }
       }
     },
