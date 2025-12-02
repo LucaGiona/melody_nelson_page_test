@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
  <meta charset="UTF-8">
@@ -30,65 +30,79 @@
 
 <body>
 
-<header class="header">
+<header class="header" role="banner">
   <div class="background-img">
-    <div class="overlay sticky">
+    <div class="overlay sticky" role="presentation">
 
-      <div id="logo25">
+      <div id="logo25" role="group" aria-label="Melody Nelson Logo und Adresse">
+
         <div class="logo-wrapper">
-           <img src="./Icons/Logo-Melody24.png" alt="Logo" class="logo-img">
+           <img src="./Icons/Logo-Melody24.png" alt="Melody Nelson Logo" class="logo-img">
         </div>
 
         <h1 class="maintitle titel">Melody Nelson</h1>
 
         <a href="https://www.google.com/maps/place/Melody+Nelson+bar/@52.5271427,13.3830504,637m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47a851e947fc3ac3:0xbc62d6ada92076e6!8m2!3d52.5271427!4d13.38562!16s%2Fg%2F12j1lx8f7?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"
-           target="_blank">
-          <h3 class="contact-location">hannoverschestr 2
-           <img src="/Icons/icons8-google-maps-neu-apple-sf-regular-filled/icons8-google-maps-neu-48.png"
-            alt="google maps logo"
-            class="maps-pin">
+           target="_blank"
+           aria-label="Adresse in Google Maps öffnen: Hannoverschestraße 2, Berlin">
 
+          <h3 class="contact-location">
+           hannoverschestr 2
+           <img src="/Icons/icons8-google-maps-neu-apple-sf-regular-filled/icons8-google-maps-neu-48.png"
+            alt=""
+            aria-hidden="true"
+            class="maps-pin">
           </h3>
         </a>
       </div>
 
       <!-- =============================== -->
-      <!--      CONTACT ICON GRID         -->
+      <!-- CONTACT ICON GRID -->
       <!-- =============================== -->
 
-      <div class="contact-container">
+      <div class="contact-container" role="navigation" aria-label="Kontaktmöglichkeiten">
 
         <!-- MAIL -->
-        <a href="mailto:mail@melody-nelson.berlin" class="contact-item">
-          <img src="./Icons/mail-gold.png" alt="Mail" class="contact-icon">
+        <a href="mailto:mail@melody-nelson.berlin"
+           class="contact-item"
+           aria-label="E-Mail an Melody Nelson senden">
+          <img src="./Icons/mail-gold.png" alt="" aria-hidden="true" class="contact-icon">
         </a>
 
         <!-- INSTAGRAM -->
-        <a href="https://www.instagram.com/melodynelsonberlin" class="contact-item">
-          <img src="./Icons/instagram-400.png" alt="Instagram" class="contact-icon insta-icon">
+        <a href="https://www.instagram.com/melodynelsonberlin"
+           class="contact-item"
+           aria-label="Instagram Profil öffnen">
+          <img src="./Icons/instagram-400.png" alt="" aria-hidden="true" class="contact-icon insta-icon">
         </a>
+
         <!-- TELEFON -->
-        <a href="tel:+491777446751" class="contact-item">
-          <img src="./Icons/phone-gold.png" alt="Telefon" class="contact-icon">
+        <a href="tel:+491777446751"
+           class="contact-item"
+           aria-label="Telefonnummer anrufen">
+          <img src="./Icons/phone-gold.png" alt="" aria-hidden="true" class="contact-icon">
         </a>
 
       </div>
-         <br><br> 
-       <button id="openModalBtn" class="btn">
-      Reservierung
-    </button> 
-    <br>
-    <a href="#events-info" class="info-events-link">
-       
-      <h2 class="info-events">
-        <span class="pfeil">&#8595;</span>
-        Info Events / Catering 
-        <span class="pfeil">&#8595;</span>
-      </h2>
-    </a>
 
+      <br><br> 
+      <button id="openModalBtn" class="btn"
+              aria-haspopup="dialog"
+              aria-controls="myModal">
+        Reservierung
+      </button> 
 
-    
+      <br>
+
+      <a href="#events-info" class="info-events-link"
+         aria-label="Zu Infos über Events und Catering springen">
+        <h2 class="info-events">
+          <span class="pfeil">&#8595;</span>
+          Info Events / Catering 
+          <span class="pfeil">&#8595;</span>
+        </h2>
+      </a>
+
     </div>  
   </div>
 </header>
@@ -98,7 +112,9 @@
 <!-- OPENING HOURS -->
 <!-- =============================== -->
 
-<section class="background-img2">
+<section class="background-img2" aria-labelledby="opening-hours-title">
+  <h2 id="opening-hours-title" class="visually-hidden">Öffnungszeiten</h2>
+
   <div class="open-conatiner">
     <div class="bg-overlay"></div>
     <div class="info-open">
@@ -117,9 +133,9 @@
 <!-- INFO SECTION -->
 <!-- =============================== -->
 
-<div class="info-text" id="events-info">
+<div class="info-text" id="events-info" role="region" aria-labelledby="events-title">
 <div class="info-inner">
-  <h4>CATERING / EVENTS</h4>
+  <h4 id="events-title">CATERING / EVENTS</h4>
   <h4>MEETINGS / GEBURTSTAGE</h4>
   <br>
 
@@ -149,56 +165,67 @@
     • Geburtstage<br>
     • Team-Events<br>
     • Präsentationen / Meetings<br>
-    • Weihnachtsfeiern
-    • Feiertage
-    <br><br>
-
-    
+    • Weihnachtsfeiern<br>
+    • Feiertage<br><br>
 
     Schreib uns einfach kurz, was du planst – wir melden uns mit einem passenden Vorschlag.
   </p>
 </div>
 
-
-     <button class="info-toggle-btn">…mehr Infos</button>
+<button class="info-toggle-btn"
+        aria-expanded="false"
+        aria-controls="events-info"
+        aria-label="Mehr Informationen anzeigen">
+  …mehr Infos
+</button>
 </div>
 <div id="info-end"></div>
     
 <!-- =============================== -->
-<!-- Foto -->
-<!-- =============================== -->
-
-
-
-<!-- =============================== -->
 <!-- RESERVIERUNG -->
 <!-- =============================== -->
 
-<section class="background-img3" id="reservation-section">
+<section class="background-img3" id="reservation-section"
+         role="region"
+         aria-labelledby="contact-mail-title">
   
   <section class="button-container">
-<h2 class="contact">Kontakt Mail</h2>
+    <h2 id="contact-mail-title" class="contact">Kontakt Mail</h2>
 
-    <a href="mailto:mail@melody-nelson.berlin" class="btn">
+    <a href="mailto:mail@melody-nelson.berlin"
+       class="btn"
+       aria-label="E-Mail für Events und Catering senden">
       <nobr>Events | Catering</nobr>
     </a>
 
   </section>
 </section>
 
-<div id="myModal" class="modal">
+<!-- =============================== -->
+<!-- MODAL -->
+<!-- =============================== -->
+
+<div id="myModal" class="modal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-logo-title">
+
   <div class="modal-content">
 
-    <span class="close">×</span>
+    <span class="close"
+          role="button"
+          tabindex="0"
+          aria-label="Fenster schließen">×</span>
 
-  <div class="logo-wrapper">
-    <img src="./Icons/Logo-Melody24.png" alt="Logo" class="logo-img small">
-  </div>
-
+    <div class="logo-wrapper">
+      <img src="./Icons/Logo-Melody24.png"
+           alt="Melody Nelson Logo"
+           class="logo-img small"
+           id="modal-logo-title">
+    </div>
 
     <div id="widgetContainer">
 
-      <!-- OpenTable Widget -->
       <div id="ot-widget-container2"
            data-r3uid="09398a39-d4d9-44cd-bdce-d846fd77831a2">
 
@@ -215,36 +242,55 @@
 
       </div>
 
-
-
     </div>
   </div>
 </div>
 
+<!-- =============================== -->
+<!-- GALLERY -->
+<!-- =============================== -->
 
 <div class="wrapper">
  
     <div class="gallery">
-      <img src="./Fotos/aussen_innen.jpeg" alt="" class="gallery">
+      <img src="./Fotos/aussen_innen.jpeg"
+           alt="Innen- und Außenbereich der Melody Nelson Bar"
+           class="gallery">
     </div>
+
     <br>
+
     <div class="gallery">
-      <img src="./Fotos/food1.jpeg" alt="" class="gallery">
+      <img src="./Fotos/food1.jpeg"
+           alt="Auswahl an Barfood-Gerichten"
+           class="gallery">
     </div>
+
     <br>
+
     <div class="gallery">
-      <img src="./Fotos/drinks1.jpeg" alt="" class="gallery">
+      <img src="./Fotos/drinks1.jpeg"
+           alt="Cocktails und Drinks aus unserer Bar"
+           class="gallery">
     </div>
 </div>
 
-<footer>
+<!-- =============================== -->
+<!-- FOOTER -->
+<!-- =============================== -->
+
+<footer role="contentinfo">
   <div class="footer">
     <h3 class="footer-text">
-      <a href="./impress&co/impressum.html" class="impr">impressum</a>
+      <a href="./impress&co/impressum.html"
+         class="impr"
+         aria-label="Impressum öffnen">impressum</a>
     </h3>
     <h3 class="footer-text">&nbsp;|&nbsp;</h3>
     <h3 class="footer-text">
-      <a href="./impress&co/datenschutz.html" class="impr">datenschutz</a>
+      <a href="./impress&co/datenschutz.html"
+         class="impr"
+         aria-label="Datenschutzerklärung öffnen">datenschutz</a>
     </h3>
   </div>
 </footer>
